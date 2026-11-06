@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>AJAX, PHP and SQL - Assignment_5</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="refreshAll()">
+        <h1>AJAX, PHP and SQL</h1>
+        <p class="sub">Dipak Mahata | 2024CSB082</p>
+
+        <div class="box">
+            <h2>Add a Student</h2>
+            <form id="addForm">
+              Name: <input type="text" name="name">
+              <br>
+              Marks: <input type="number" name="marks" min="0" max="100">
+              <br>
+              Gender: 
+              <input type="radio" name="gender" value="Male" checked> Male
+              <input type="radio" name="gender" value="Female"> Female
+              <br>
+              Department:
+              <select name="dept" size="3">
+                <option value="CSE" selected>CSE</option>
+                <option value="ETCE">ETCE</option>  // Actually ECE but i changed it into ETCE
+                <option value="ME">ME</option>
+                <option value="IT">IT</option>
+              </select>
+              <br>
+              <input type="hidden" name="action" value="add">
+              <button type="button" onclick="addStudent()">Add Student</button>
+              <button type="reset" class="grey">Clear</button>
+            </form>
+            <div id="addMsg"></div>
+        </div>
+
+        <div class="box wide">
+            <h2>Student Records</h2>
+            <input type="text" id="search" placeholder="Type to search..." oninput="loadTable()">
+            <div id="tableMsg"></div>
+            <div id="tableBox"></div>
+        </div>
+
+
+        <div class="box wide">
+            <h2>Marks Report</h2>
+            <div id="reportBox"></div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
